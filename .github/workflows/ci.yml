@@ -2,9 +2,12 @@ name: ci
 
 on: push
 
-  create_file:
-    image: alpine
-    script:
-      - echo: "Building ..."
-      - mkdir build
-      - touch build/somefile.txt
+jobs:
+  name: create file
+  runs-on: ubuntu-latest
+    create_file:
+      image: alpine
+      script:
+        - echo: "Building ..."
+        - mkdir build
+        - touch build/somefile.txt
